@@ -4,3 +4,16 @@ body{
     margin:0;
     padding:0;
 }
+
+.table2{
+    border-collapse: separate;
+    border-spacing:0 20px;
+    
+}
+.box1 { text-align: center; background-color: darkred; }
+.box2 { text-align: center; background-color: deeppink; }
+.box3 { text-align: center; background-color: brown; }
+
+/* strongly recommended so it looks like a “box” */
+.box1, .box2, .box3 { padding: 16px; color: white; }
+.box1 a, .box2 a, .box3 a { color: white; }
