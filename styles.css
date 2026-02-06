@@ -1,37 +1,78 @@
-
-
-body{
-    margin:0;
-    padding:0;
-}
-
-.table2{
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .table2 {
     border-collapse: separate;
-    border-spacing:0 20px;
-    
-}
-.box1 { text-align: center; background-color: darkred; }
-.box2 { text-align: center; background-color: deeppink; }
-.box3 { text-align: center; background-color: brown; }
-
-/* strongly recommended so it looks like a “box” */
-.box1, .box2, .box3 { padding: 16px; color: white; }
-.box1 a, .box2 a, .box3 a { color: white; }
-
-.box_text_color{
-    color:white;
-    
-    padding:10px;
-
-
-}
-.box_text_color h2,
-.box_text_color p,
-.box_text_color a {
-  margin: 0;
-}
-
-
-.box_text_color a {
-  color: white;
-}
+    border-spacing: 0 20px;
+  
+    /* optional but helps match the centered look */
+    width: 1140px;     /* 570 + 570 */
+    margin: 0 auto;
+  }
+  
+  .table2 td {
+    padding: 0;        /* remove default cell padding */
+  }
+  
+  /* Box background colors */
+  .box1 { background-color: darkred; text-align: center; }
+  .box2 { background-color: deeppink; text-align: center; }
+  .box3 { background-color: brown;   text-align: center; }
+  
+  /* Step 7: text styling inside boxes */
+  .box_text_color {
+    color: white;
+    padding: 10px;
+  
+    /* center like the expected output */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    height: 350px;  /* must match image height */
+  }
+  
+  /* remove default margins inside box */
+  .box_text_color h2,
+  .box_text_color p,
+  .box_text_color a {
+    margin: 0;
+  }
+  
+  /* Step 10: paragraph styling */
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #3d3d3d;
+  }
+  
+  /* override paragraph color inside boxes */
+  .box_text_color p {
+    color: inherit;
+  }
+  
+  /* links inherit white inside boxes */
+  .box_text_color a,
+  .box_text_color a:link,
+  .box_text_color a:visited,
+  .box_text_color a:hover,
+  .box_text_color a:active {
+    color: inherit;
+  }
+  
+  /* Step 9: image cell width */
+  .td_image_cell {
+    width: 570px;
+  }
+  
+  /* Step 9: standardize images inside the image cell */
+  .td_image_cell img {
+    width: 570px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+  }
+  
