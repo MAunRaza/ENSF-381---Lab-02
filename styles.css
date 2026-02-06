@@ -17,3 +17,21 @@ body{
 /* strongly recommended so it looks like a “box” */
 .box1, .box2, .box3 { padding: 16px; color: white; }
 .box1 a, .box2 a, .box3 a { color: white; }
+
+.box_text_color{
+    color:white;
+    
+    padding:10px;
+
+
+}
+.box_text_color h2,
+.box_text_color p,
+.box_text_color a {
+  margin: 0;
+}
+
+
+.box_text_color a {
+  color: white;
+}
