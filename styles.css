@@ -1,60 +1,68 @@
+/* Step 4 */
 body {
     margin: 0;
     padding: 0;
   }
   
-  .table2 {
-    border-collapse: separate;
-    border-spacing: 0 20px;
-  
-    /* optional but helps match the centered look */
-    width: 1140px;     /* 570 + 570 */
+  /* Center the whole page content like the PDF */
+  table {
+    width: 100%;
+    max-width: 1140px;   /* 570 + 570 */
     margin: 0 auto;
   }
   
-  .table2 td {
-    padding: 0;        /* remove default cell padding */
+  /* Step 5 */
+  .table2 {
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    table-layout: fixed; /* makes the 2 columns stay consistent */
   }
   
-  /* Box background colors */
-  .box1 { background-color: darkred; text-align: center; }
-  .box2 { background-color: deeppink; text-align: center; }
-  .box3 { background-color: brown;   text-align: center; }
+  .table2 td {
+    padding: 0;
+    vertical-align: middle;
+  }
+  
+  /* Step 9: image container is 570px wide */
+  .td_image_cell {
+    width: 570px;
+    height: 350px; /* if PDF looks taller, change both heights to 400px */
+  }
+  
+  /* Step 9: images fill the container */
+  .td_image_cell img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  /* Step 6: box colors + centered */
+  .box1 { background-color: darkred;  text-align: center; width: 570px; }
+  .box2 { background-color: deeppink; text-align: center; width: 570px; }
+  .box3 { background-color: brown;    text-align: center; width: 570px; }
   
   /* Step 7: text styling inside boxes */
   .box_text_color {
     color: white;
     padding: 10px;
   
-    /* center like the expected output */
+    /* center text like the PDF */
+    height: 350px; /* must match .td_image_cell height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
-    height: 350px;  /* must match image height */
   }
   
-  /* remove default margins inside box */
+  /* remove margins in the box content */
   .box_text_color h2,
   .box_text_color p,
   .box_text_color a {
     margin: 0;
   }
   
-  /* Step 10: paragraph styling */
-  p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: #3d3d3d;
-  }
-  
-  /* override paragraph color inside boxes */
-  .box_text_color p {
-    color: inherit;
-  }
-  
-  /* links inherit white inside boxes */
+  /* Step 8: links inherit */
   .box_text_color a,
   .box_text_color a:link,
   .box_text_color a:visited,
@@ -63,16 +71,15 @@ body {
     color: inherit;
   }
   
-  /* Step 9: image cell width */
-  .td_image_cell {
-    width: 570px;
+  /* Step 10: paragraph styling */
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #3d3d3d;
   }
   
-  /* Step 9: standardize images inside the image cell */
-  .td_image_cell img {
-    width: 570px;
-    height: 350px;
-    object-fit: cover;
-    display: block;
+  /* keep paragraphs inside the boxes white */
+  .box_text_color p {
+    color: inherit;
   }
   
